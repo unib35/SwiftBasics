@@ -32,7 +32,8 @@ class Person {
     }
 }
 
-var crew = Dictionary<String, Person>()
+var crew: [String: Person] = [:]
+//var crew = Dictionary<String, Person>()
 crew["Captain"] = Person(givenName: "Jean-Luc", familyName: "Picard", commsMethod: .phone)
 crew["First Officer"] = Person(givenName: "William", familyName: "Riker", commsMethod: .email)
 crew["Chief Engineer"] = Person(givenName: "Geordi", familyName: "LaForge", commsMethod: .textMessage)
@@ -48,3 +49,6 @@ let firstRole = roles.first!
 print(firstRole)
 
 print(crew["Security Officer"]!.displayName)
+
+
+let intByName: [String: Int] = ["one": 1, "two": 2, "three": 3] //Dictionary<String, Int>
