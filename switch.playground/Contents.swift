@@ -45,3 +45,6 @@ func combine(_ firstItem: Item, with secondItem: Item) -> Item? {
 let door = combine(.key, with: .lockedDoor)
 let oilAndWater = combine(.bluntKnife, with: .lockedDoor)
 let knifeAndSharpening = combine(.bluntKnife, with: .sharpeningStone)
+
+
+
