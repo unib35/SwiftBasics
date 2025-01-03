@@ -40,3 +40,22 @@ printBallDetails(ofNumber: 8) // 8 - black
 printBallDetails(ofNumber: 12) // 12 - stripe
 printBallDetails(ofNumber: 0) // 0 is not a valid pool ball number
 printBallDetails(ofNumber: 16) // 16 is not a valid pool ball number
+
+
+var isDarkMode : Bool = false
+
+if (isDarkMode == true){
+    print("다크모드 입니다")
+} else {
+    print("다크모드가 아닙니다.")
+}
+
+if isDarkMode {
+    print("다크모드")
+} else {
+    print("다크모드 아님")
+}
+
+//삼항연산자
+var title : String = isDarkMode == true ? "다크모드 입니다." : "다크모드가 아닙니다."
+print("title : \(title)")
