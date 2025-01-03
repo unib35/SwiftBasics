@@ -74,3 +74,27 @@ do {
 } catch MealError.wrongStateToAddSalt {
     print("이 단계에서는 소금을 추가할 수 없습니다.")
 }
+
+// 학교 - ex) 초, 중, 고
+enum School {
+//    case elementary
+//    case middle
+//    case high
+    case elementary, middle, high
+}
+
+let yourSchool = School.high
+//print("yourSchool: \(yourSchool)")
+print("yourschool", yourSchool)
+
+// enum은 값을 가질수도있다.
+enum Grade : Int {
+    case first = 1
+    case second = 2
+}
+
+var yourGrade = Grade.first
+print("yourGrade : \(yourGrade)")
+yourGrade = Grade.second
+print("yourGrade : \(yourGrade)")
+
