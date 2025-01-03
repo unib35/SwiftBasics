@@ -48,3 +48,21 @@ func howManyHeadsInARow() -> Int {
 
 let noOfHeads = howManyHeadsInARow()
 print(noOfHeads)
+
+// foreach 반복문
+
+// 콜렉션 : 데이터를 모아둔 것
+// 배열, 딕셔너리, 튜플, 셋
+var myArray : [Int] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+for item in myArray {
+    print("item: \(item)")
+}
+
+for item in myArray where item > 5 {
+    print("5 초과의 item: \(item)")
+}
+
+for item in myArray where item % 2 == 0 {
+    print("짝수 : \(item)")
+}
