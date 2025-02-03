@@ -32,7 +32,7 @@ print(myString ?? "There is no value")
 myString = nil
 print(myString ?? "There is no value")
 
-// ---------------------------------------
+// -----------------------------------------------
 
 
 func checkIfUserIsPremium() -> Bool? {
@@ -104,4 +104,63 @@ func checkIfUserIsPremium7() -> Bool {
     }
     return userIsPremium
     
+}
+
+// -----------------------------------------------
+
+var userIsNew: Bool? = true
+var userDidCompleteOnboarding: Bool? = false
+var userFavoriteMovie: String? = nil
+
+@MainActor
+func checkIfUserIsSetUp() -> Bool {
+    if let isNew = userIsNew, let didCompleteOnboarding = userDidCompleteOnboarding, let favoriteMovie = userFavoriteMovie {
+        return getUserStatus(userIsNew: isNew, userDidCompleteOnboarding: didCompleteOnboarding, userFavoriteMovie: favoriteMovie)
+    } else {
+        return false
+    }
+}
+
+@MainActor
+func checkIfUserIsSetup2() -> Bool {
+    guard let userIsNew, let userDidCompleteOnboarding, let userFavoriteMovie else {
+        return false
+    }
+    
+    return getUserStatus(userIsNew: userIsNew, userDidCompleteOnboarding: userDidCompleteOnboarding, userFavoriteMovie: userFavoriteMovie)
+}
+
+func getUserStatus(userIsNew: Bool, userDidCompleteOnboarding: Bool, userFavoriteMovie: String) -> Bool {
+    if userIsNew && userDidCompleteOnboarding {
+        return true
+    }
+    
+    return false
+}
+
+@MainActor
+func checkIfUserIsSetUp3() -> Bool {
+    if let userIsNew {
+        // userIsNew == Bool
+        
+        if let userDidCompleteOnboarding {
+            // userDidCompleteOnboarding == Bool
+            
+            if let userFavoriteMovie {
+                // userFavoriteMovie == Bool
+                return getUserStatus(userIsNew: userIsNew, userDidCompleteOnboarding: userDidCompleteOnboarding, userFavoriteMovie: userFavoriteMovie)
+            } else {
+                // userFavoriteMovie == nil
+                return false
+            }
+            
+        } else {
+            // userDidCompleteOnboarding == nil
+            return false
+        }
+        
+    } else {
+        // userIsNew == nil
+        return false
+    }
 }
